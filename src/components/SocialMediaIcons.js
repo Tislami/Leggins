@@ -14,7 +14,7 @@ const SocialMediaIcons = () => {
     var logos = [<ImGithub />,<FaFacebookF/>,<FaTwitter/>,<FaInstagram/>,<FaYoutube/>]
     return <div className='flex gap-5 text-lg text-gray-400'>
         {logos.map((logo, index) => ( 
-            <div className = "hover:text-white duration-300 cursor-pointer" >
+            <div key={index} className = "hover:text-white duration-300 cursor-pointer" >
                 {logo} 
             </div>
             )

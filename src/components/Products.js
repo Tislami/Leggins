@@ -2,11 +2,14 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 
-const Product = () => { 
+const Products = ({products}) => { 
+
     return <div className='py-10'>
         <Greeting/>
-        <div className='max-w-screen-xl mx-auto'>
-            <ProductCard />
+        <div className='max-w-screen-xl mx-auto py-10 grid grid-cols-4 gap-10'>
+            {products.map((item,index)=> 
+                <ProductCard key= {item.id} item={item}/>
+            )}            
         </div>
     </div>
 }
@@ -29,4 +32,4 @@ const Greeting = () => {
 
 
 
-export default Product
+export default Products
