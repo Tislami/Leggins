@@ -6,7 +6,10 @@ module.exports = {
       fontFamily:{
         bodyFont: "Poppins",
         titleFont: "Nunito Sans"
-      } 
+      },
+      colors: {
+        'primary': '#f2a942',
+      },
     },
   },
   plugins: [],
