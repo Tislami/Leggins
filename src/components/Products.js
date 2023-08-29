@@ -7,7 +7,7 @@ const Products = ({products}) => {
     return <div className='py-10'>
         <Greeting/>
         <div className='max-w-screen-xl mx-auto py-10 grid grid-cols-4 gap-10'>
-            {products.map((item,index)=> 
+            {products.map((item)=> 
                 <ProductCard key= {item.id} item={item}/>
             )}            
         </div>
