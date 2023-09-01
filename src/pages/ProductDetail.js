@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useLocation} from "react-router-dom";
 import {MdOutlineStar} from "react-icons/md";
+import RelatedProducts from "../components/RelatedProducts";
+import Reviews from "../components/Reviews";
 
 const ProductDetail = () => {
     const location = useLocation()
@@ -13,29 +15,30 @@ const ProductDetail = () => {
         setRating(location.state.item.rating)
     }, [])
 
-    console.log(details)
+    return <div className={""}>
+        <div className={"max-w-screen h-full mb-20 mt-10 mx-40 flex justify-center gap-10 "}>
+            <ProductImage src={details.image} alt={details.name}/>
+            <div className={"flex flex-col gap-12"}>
+                <div>
+                    <ProductTitle title={details.title}/>
+                    <Description text={details.description}/>
+                </div>
 
+                <div className={"flex justify-between items-center"}>
+                    <ProductPrice price={details.price}/>
+                    <Rate rate={rating.rate} reviewCount={rating.count}/>
+                </div>
 
-    return <div className={"max-w-screen my-10 mx-40 flex justify-center gap-10 "}>
-        <ProductImage src={details.image} alt={details.name}/>
-        <div className={"flex flex-col justify-between"}>
-            <div>
-                <ProductTitle title={details.title}/>
-                <Description text={details.description}/>
+                <div className={"border-b-2 flex flex-col gap-4"}>
+                    <Colors image={details.image}/>
+                    <Sizes/>
+                </div>
+
+                <AddToCartButton/>
             </div>
-
-            <div className={"flex justify-between items-center"}>
-                <ProductPrice price={details.price}/>
-                <Rate rate={rating.rate} reviewCount={rating.count}/>
-            </div>
-
-            <div className={"border-b-2 flex flex-col gap-4"}>
-                <Colors image={details.image}/>
-                <Sizes/>
-            </div>
-
-            <AddToCartButton/>
         </div>
+        <RelatedProducts/>
+        <Reviews/>
     </div>
 }
 const ProductImage = ({src, alt}) => {
@@ -77,15 +80,16 @@ const Colors = ({image}) => {
         </div>
         <div>
             <ul className='flex gap-4'>
-                <li className="w-12 h-12 py-1 flex justify-center items-center border-primary border-2"><img
+                <li className="cursor-pointer w-12 h-12 py-1 flex justify-center items-center border-primary border-2">
+                    <img
+                        className={"w-full h-full object-scale-down "} src={image} alt="adlkfşmsd"/></li>
+                <li className="cursor-pointer w-12 h-12 py-1 flex justify-center items-center border "><img
                     className={"w-full h-full object-scale-down "} src={image} alt="adlkfşmsd"/></li>
-                <li className="w-12 h-12 py-1 flex justify-center items-center border "><img
+                <li className="cursor-pointer w-12 h-12 py-1 flex justify-center items-center border "><img
                     className={"w-full h-full object-scale-down "} src={image} alt="adlkfşmsd"/></li>
-                <li className="w-12 h-12 py-1 flex justify-center items-center border "><img
+                <li className="cursor-pointer w-12 h-12 py-1 flex justify-center items-center border "><img
                     className={"w-full h-full object-scale-down "} src={image} alt="adlkfşmsd"/></li>
-                <li className="w-12 h-12 py-1 flex justify-center items-center border "><img
-                    className={"w-full h-full object-scale-down "} src={image} alt="adlkfşmsd"/></li>
-                <li className="w-12 h-12 py-1 flex justify-center items-center border "><img
+                <li className="cursor-pointer w-12 h-12 py-1 flex justify-center items-center border "><img
                     className={"w-full h-full object-scale-down "} src={image} alt="adlkfşmsd"/></li>
             </ul>
         </div>
@@ -99,11 +103,11 @@ const Sizes = () => {
         </div>
         <div>
             <ul className='flex gap-4'>
-                <li className="w-7 h-7 flex justify-center items-center text-sm font-medium p-5 border-primary border-2">XS</li>
-                <li className="w-7 h-7 border flex justify-center items-center text-sm font-medium p-5 ">S</li>
-                <li className="w-7 h-7 border flex justify-center items-center text-sm font-medium p-5 ">M</li>
-                <li className="w-7 h-7 border flex justify-center items-center text-sm font-medium p-5 ">L</li>
-                <li className="w-7 h-7 border flex justify-center items-center text-sm font-medium p-5 ">XL</li>
+                <li className="cursor-pointer w-7 h-7 flex justify-center items-center text-sm font-medium p-5 border-primary border-2">XS</li>
+                <li className="cursor-pointer w-7 h-7 border flex justify-center items-center text-sm font-medium p-5 ">S</li>
+                <li className="cursor-pointer w-7 h-7 border flex justify-center items-center text-sm font-medium p-5 ">M</li>
+                <li className="cursor-pointer w-7 h-7 border flex justify-center items-center text-sm font-medium p-5 ">L</li>
+                <li className="cursor-pointer w-7 h-7 border flex justify-center items-center text-sm font-medium p-5 ">XL</li>
             </ul>
         </div>
     </div>

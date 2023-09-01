@@ -4,17 +4,16 @@ import {useNavigate} from "react-router-dom";
 const ProductCard = ({item}) => {
     const navigate = useNavigate()
     const handleDetails = () => {
-        navigate(`/product/${item.id}`,
-            {
-                state:{
-                    item: item
-                }
+        navigate(`/product/${item.id}`, {
+            state: {
+                item: item
             }
-        )
+        })
     }
+
     return <div
         onClick={handleDetails}
-        className='relative group w-72 h-[26rem] bg-white  border-[1px] pt-2 rounded-lg shadow-sm hover:scale-105 duration-500 overflow-hidden cursor-pointer  '>
+        className='relative group w-[280px] h-[400px] bg-white border-[1px] pt-2 rounded-lg shadow-sm hover:scale-105 duration-500 overflow-hidden cursor-pointer  '>
         <ProductImage src={item.image}/>
         <Title title={item.title} price={item.price} category={item.category}/>
         <AddToCartButton/>
@@ -25,6 +24,7 @@ const ProductCard = ({item}) => {
 const ProductImage = ({src}) => {
     return <div className='group px-2 w-full h-5/6 cursor-pointer group-hover:h-[50%] ease-in-out duration-500'>
         <img className='w-full h-full object-scale-down' src={src} alt="Product Image"/>
+
     </div>
 }
 
@@ -52,7 +52,7 @@ const Title = ({title, price, category}) => {
             </div>
 
             <div>
-                <h3 className='text-sm font-semibold  '>Colors</h3>
+                <h3 className='text-sm font-semibold '>Colors</h3>
                 <ul className='flex gap-2'>
                     <li className="w-4 h-4 rounded-full bg-red-500 "></li>
                     <li className="w-4 h-4 rounded-full bg-blue-500 "></li>

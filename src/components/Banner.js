@@ -17,10 +17,10 @@ const Banner = () => {
     }
 
 
-    return <div className="w-full h-auto overflow-x-hidden">
-        <div className="w-screen h-[650px] relative">
+    return <div className="w-full overflow-x-hidden py-2">
+        <div className="w-screen h-[550px] relative">
             <CoverImage coverData={coverData} currentSle={currentSlide}/>
-            <div className="absolute w-fit left-0 right-0 mx-auto flex gap-8 bottom-32">
+            <div className="absolute w-fit left-0 right-0 mx-auto flex gap-8 bottom-16">
                 <BannerButton onClick={prevSlide}> <HiArrowLeft/> </BannerButton>
                 <BannerButton onClick={nextSlide}> <HiArrowRight/> </BannerButton>
             </div>

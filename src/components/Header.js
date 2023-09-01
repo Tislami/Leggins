@@ -29,7 +29,7 @@ const List = () => (
 );
 
 const ListItem = ({ title }) => (
-    <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-4 decoration-[1px] cursor-pointer duration-300">
+    <li className="text-base text-black font-bold hover:text-primary hover:underline underline-offset-4 decoration-[1px] cursor-pointer duration-300">
         {title}
     </li>
 );
